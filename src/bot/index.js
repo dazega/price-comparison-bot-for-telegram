@@ -1,5 +1,5 @@
 const { bot, db } = require('../config/')
-const { connectDB, sequelize } = db;
+const { connectDB } = db;
 const { start } = require('./commands');
 
 bot.start(start);
@@ -21,6 +21,5 @@ bot.command('suscribir', (ctx) => {
 
 (async () => {
     await connectDB();
-    console.log('db connected');
     await bot.launch();
 })();
