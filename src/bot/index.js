@@ -21,10 +21,6 @@ bot.command('suscribir', (ctx) => {
 
 (async () => {
     await connectDB();
-    console.log('db connected')
-    console.log('Sync db wait a moment...');
-    // await sequelize.sync({ alter: true }).then(() => {
-    //     console.log('✅Synced database successfully...');
-    // });
+    console.log('db connected');
     await bot.launch();
 })();
