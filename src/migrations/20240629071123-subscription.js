@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    return queryInterface.createTable('Subscription', {
+    return queryInterface.createTable('Subscriptions', {
       id: {
         primaryKey: true,
         autoIncrement: true,
@@ -12,7 +12,7 @@ module.exports = {
       },
       chatId: {
         allowNull: false,
-        type: Sequelize.DataTypes.INTEGER
+        type: Sequelize.DataTypes.STRING
       },
       product: {
         allowNull: false,
@@ -20,7 +20,7 @@ module.exports = {
       },
       price: {
         allowNull: false,
-        type: Sequelize.DataTypes.INTEGER
+        type: Sequelize.DataTypes.FLOAT
       },
       createdAt: {
         type: Sequelize.DataTypes.DATE,
@@ -36,6 +36,6 @@ module.exports = {
   },
 
   async down (queryInterface) {
-    return queryInterface.dropTable('Subscription')
+    return queryInterface.dropTable('Subscriptions')
   }
 };

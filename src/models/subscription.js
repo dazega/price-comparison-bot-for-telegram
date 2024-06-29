@@ -9,7 +9,7 @@ const Subscription = sequelize.define('Subscription', {
     },
     chatId: {
         allowNull: false,
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
     },
     product: {
         allowNull: false,
@@ -17,7 +17,7 @@ const Subscription = sequelize.define('Subscription', {
     },
     price: {
         allowNull: false,
-        type: DataTypes.INTEGER
+        type: DataTypes.FLOAT
     },
     createdAt: {
         type: DataTypes.DATE,
