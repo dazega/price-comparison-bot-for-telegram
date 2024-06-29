@@ -1,4 +1,5 @@
-const bot = require('../config/bot');
+const { bot, db } = require('../config/')
+const { connectDB, sequelize } = db;
 const { start } = require('./commands');
 
 bot.start(start);
@@ -18,4 +19,12 @@ bot.command('suscribir', (ctx) => {
     ctx.reply('algo ' + ctx.chat.id)
 });
 
-bot.launch();
+(async () => {
+    await connectDB();
+    console.log('db connected')
+    console.log('Sync db wait a moment...');
+    // await sequelize.sync({ alter: true }).then(() => {
+    //     console.log('✅Synced database successfully...');
+    // });
+    await bot.launch();
+})();
