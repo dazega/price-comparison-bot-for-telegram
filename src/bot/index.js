@@ -1,6 +1,6 @@
 const { bot, db } = require('../config/')
 const { connectDB } = db;
-const { start } = require('./commands');
+const { start, subscription } = require('./commands');
 
 bot.start(start);
 
@@ -12,12 +12,7 @@ bot.command('buscar', (ctx) => {
     console.log('ctx', typeof ctx.payload)
 });
 
-bot.command('suscribir', (ctx) => {
-    console.log('chat id', ctx.chat.id);
-    console.log('ctx', ctx)
-    ctx.reply('regresando un valor')
-    ctx.reply('algo ' + ctx.chat.id)
-});
+bot.command('suscribir', subscription);
 
 (async () => {
     await connectDB();
