@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "nodemon src/bot/index.js",
     "start": "node src/bot/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrations": "npx sequelize-cli db:migrate",
+    "undo-migrations": "npx sequelize-cli db:migrate:undo"
   },
   "repository": {
     "type": "git",
@@ -19,7 +21,8 @@
   },
   "homepage": "https://github.com/dazega/price-comparison-bot-for-telegram#readme",
   "devDependencies": {
-    "nodemon": "^3.1.4"
+    "nodemon": "^3.1.4",
+    "sequelize-cli": "^6.6.2"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
